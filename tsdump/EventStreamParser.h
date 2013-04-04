@@ -31,6 +31,7 @@ namespace ABC
 //        virtual void finalise() throw();
         
         virtual void handleEventInformationSection(const UInt8 *buffer);
+        virtual void handleTimeDateSection(const UInt8 *buffer);
 
         const std::map<int, Service> &getServices() const;
         
@@ -38,12 +39,13 @@ namespace ABC
         EventStreamParserDelegate *_delegate;
         std::map<int, Service> _services;
         std::map<int, Service> _partialServices;
+        long long _streamTimeDateUTC;
     };
 
     class EventStreamParserDelegate
     {
     public:
-        virtual void updated(EventStreamParser *parser, Service &service) = 0;
+        virtual void updated(EventStreamParser *parser, Service &service, long long timeDateUTC) = 0;
     };
     
 } //namespace ABC

@@ -11,7 +11,6 @@
 #include "Reader.h"
 #include "TransportPacket.h"
 #include "EventInformationSection.h"
-#include "TimeDateSection.h"
 
 #define BUFFER_LENGTH 188
 #define SYNC_BYTE 0x47
@@ -156,16 +155,9 @@ namespace ABC
 
             if (packet.getPayloadUnitStartIndicator() == 1)
             {
-                UInt8 offset = data[0];
-
-                if (len < 4096)
-                {
-                    memcpy(_tdtBuffer, data + offset + 1, 8);
-                }
+                memcpy(_tdtBuffer, data + 1, 8);
             }
-
-            TimeDateSection timeDateSection(_tdtBuffer);
-            wprintf(L"TDT - UTC: %llX\n", timeDateSection.getUTCTime());
+            handleTimeDateSection(_tdtBuffer);
         }
     }
 

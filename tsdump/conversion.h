@@ -2,6 +2,7 @@
 #define ABC_CONVERSION_H__
 
 #include <string>
+#include <ctime>
 
 namespace ABC
 {
@@ -399,6 +400,8 @@ namespace ABC
     //template<> void fromString<>(Int64& value, const std::wstring& str);
     //template<> void fromString<>(bool& value, const std::wstring& str);
     //template<> void fromString<>(std::wstring& value, const std::wstring& str);
+
+    time_t timeFromMJDUTC(long long mjdutc);
 
 } //namespace ABC
 #endif //ABC_CONVERSION_H__

@@ -9,8 +9,6 @@
 #ifndef __tssniff__Event__
 #define __tssniff__Event__
 
-#include <ctime>
-
 namespace ABC
 {
     class Event
@@ -23,8 +21,6 @@ namespace ABC
         int getId() const;
         long long getStartTime() const;
         int getDuration() const;
-
-        time_t getStartTimeTime();
 
     private:
         int _id;

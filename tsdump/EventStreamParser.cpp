@@ -9,6 +9,7 @@
 #include "common.h"
 #include "EventStreamParser.h"
 #include "EventInformationSection.h"
+#include "TimeDateSection.h"
 
 namespace ABC
 {
@@ -45,25 +46,15 @@ namespace ABC
             
             if (eis.getSectionNumber() == 0)
             {
-                // Present Event
-//                int eventId = eis.getEventId(0);
-//                if (eventId != service.getPresentEvent().getId())
-                {
-                    service.getPresentEvent() = Event(eis.getEventId(0),
-                                                      eis.getStartTime(0),
-                                                      eis.getDuration(0));
-                }
+                service.getPresentEvent() = Event(eis.getEventId(0),
+                                                  eis.getStartTime(0),
+                                                  eis.getDuration(0));
             }
             else if (eis.getSectionNumber() == 1)
             {
-                // Following Event
-//                int eventId = eis.getEventId(0);
-//                if (eventId != service.getPresentEvent().getId())
-                {
-                    service.getFollowingEvent() = Event(eis.getEventId(0),
-                                                        eis.getStartTime(0),
-                                                        eis.getDuration(0));
-                }
+                service.getFollowingEvent() = Event(eis.getEventId(0),
+                                                    eis.getStartTime(0),
+                                                    eis.getDuration(0));
 
                 // If we have both present and following, put it into the map
                 if (service.isComplete())
@@ -78,7 +69,7 @@ namespace ABC
                     {
                         _services[serviceId] = service;
                         if (_delegate)
-                            _delegate->updated(this, service);
+                            _delegate->updated(this, service, _streamTimeDateUTC);
                     }
 
                     // Remove it from the partials
@@ -87,6 +78,14 @@ namespace ABC
                 }
             }
         }
+    }
+
+    void EventStreamParser::handleTimeDateSection(const UInt8 *buffer)
+    {
+        TimeDateSection timeDateSection(buffer);
+        _streamTimeDateUTC = timeDateSection.getUTCTime();
+
+        wprintf(L"TDT - UTC: %llX\n", timeDateSection.getUTCTime());
     }
 
     const std::map<int, Service> &EventStreamParser::getServices() const

@@ -18,7 +18,7 @@ namespace ABC
     public:
         int main(int argc, const char *argv[]);
 
-        virtual void updated(EventStreamParser *parser, Service &service);
+        virtual void updated(EventStreamParser *parser, Service &service, long long timeDateUTC);
 
     private:
         bool parseCommandLine(int argc, const char *argv[], long *deviceNumber, long *port);

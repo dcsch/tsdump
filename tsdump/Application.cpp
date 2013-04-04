@@ -9,6 +9,7 @@
 #include "common.h"
 #include "Application.h"
 #include "EventStreamParser.h"
+#include "conversion.h"
 #include <stdlib.h>
 #include <string.h>
 
@@ -88,11 +89,12 @@ namespace ABC
         return 0;
     }
 
-    void Application::updated(EventStreamParser *parser, Service &service)
+    void Application::updated(EventStreamParser *parser, Service &service, long long timeDateUTC)
     {
         const int TZ_PLUS_11 = 39600;
-        time_t presentStartTime = service.getPresentEvent().getStartTimeTime() + TZ_PLUS_11;
-        time_t followingStartTime = service.getFollowingEvent().getStartTimeTime() + TZ_PLUS_11;
+        time_t presentStartTime = timeFromMJDUTC(service.getPresentEvent().getStartTime()) + TZ_PLUS_11;
+        time_t followingStartTime = timeFromMJDUTC(service.getFollowingEvent().getStartTime()) + TZ_PLUS_11;
+        time_t updatedTime = timeFromMJDUTC(timeDateUTC);
 
         char present[256];
         strncpy(present, asctime(gmtime(&presentStartTime)), 256);
@@ -106,11 +108,18 @@ namespace ABC
         if (pos)
             *pos = 0;
 
-        wprintf(L"%d: present event_id: %d - %s, following event_id: %d - %s\n",
+        char updated[256];
+        strncpy(updated, asctime(gmtime(&updatedTime)), 256);
+        pos = strchr(updated, '\n');
+        if (pos)
+            *pos = 0;
+
+        wprintf(L"%d: present event_id: %d - %s, following event_id: %d - %s, updated: %s\n",
                 service.getId(),
                 service.getPresentEvent().getId(),
                 present,
                 service.getFollowingEvent().getId(),
-                following);
+                following,
+                updated);
     }
 }

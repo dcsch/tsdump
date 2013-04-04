@@ -39,7 +39,8 @@ public:
     void handlePacket(const UInt8 *buffer);
     
     virtual void handleEventInformationSection(const UInt8 *buffer) = 0;
-    
+    virtual void handleTimeDateSection(const UInt8 *buffer) = 0;
+
 private:
     Reader *_reader;
     UInt8 _eisBuffer[4096];
