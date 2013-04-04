@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		63442664170BF09C00483FC4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63442663170BF09C00483FC4 /* main.cpp */; };
 		63442666170BF09C00483FC4 /* tsdump.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63442665170BF09C00483FC4 /* tsdump.1 */; };
+		63442687170BF53300483FC4 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6344266C170BF53300483FC4 /* Application.cpp */; };
+		63442688170BF53300483FC4 /* conversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6344266F170BF53300483FC4 /* conversion.cpp */; };
+		6344268B170BF53300483FC4 /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63442675170BF53300483FC4 /* Event.cpp */; };
+		6344268C170BF53300483FC4 /* EventInformationSection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63442677170BF53300483FC4 /* EventInformationSection.cpp */; };
+		6344268D170BF53300483FC4 /* EventStreamParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63442679170BF53300483FC4 /* EventStreamParser.cpp */; };
+		6344268E170BF53300483FC4 /* FileReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6344267C170BF53300483FC4 /* FileReader.cpp */; };
+		63442690170BF53300483FC4 /* Service.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63442681170BF53300483FC4 /* Service.cpp */; };
+		63442691170BF53300483FC4 /* StreamParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63442683170BF53300483FC4 /* StreamParser.cpp */; };
+		63442692170BF53300483FC4 /* TransportPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63442685170BF53300483FC4 /* TransportPacket.cpp */; };
+		63442695170BFDCD00483FC4 /* TimeDateSection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63442693170BFDCD00483FC4 /* TimeDateSection.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +38,31 @@
 		63442660170BF09C00483FC4 /* tsdump */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = tsdump; sourceTree = BUILT_PRODUCTS_DIR; };
 		63442663170BF09C00483FC4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		63442665170BF09C00483FC4 /* tsdump.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = tsdump.1; sourceTree = "<group>"; };
+		6344266C170BF53300483FC4 /* Application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Application.cpp; sourceTree = "<group>"; };
+		6344266D170BF53300483FC4 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		6344266E170BF53300483FC4 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		6344266F170BF53300483FC4 /* conversion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = conversion.cpp; sourceTree = "<group>"; };
+		63442670170BF53300483FC4 /* conversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = conversion.h; sourceTree = "<group>"; };
+		63442674170BF53300483FC4 /* errorcodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = errorcodes.h; sourceTree = "<group>"; };
+		63442675170BF53300483FC4 /* Event.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Event.cpp; sourceTree = "<group>"; };
+		63442676170BF53300483FC4 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		63442677170BF53300483FC4 /* EventInformationSection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventInformationSection.cpp; sourceTree = "<group>"; };
+		63442678170BF53300483FC4 /* EventInformationSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventInformationSection.h; sourceTree = "<group>"; };
+		63442679170BF53300483FC4 /* EventStreamParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventStreamParser.cpp; sourceTree = "<group>"; };
+		6344267A170BF53300483FC4 /* EventStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventStreamParser.h; sourceTree = "<group>"; };
+		6344267B170BF53300483FC4 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
+		6344267C170BF53300483FC4 /* FileReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileReader.cpp; sourceTree = "<group>"; };
+		6344267D170BF53300483FC4 /* FileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileReader.h; sourceTree = "<group>"; };
+		6344267E170BF53300483FC4 /* IOBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOBase.h; sourceTree = "<group>"; };
+		63442680170BF53300483FC4 /* Reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reader.h; sourceTree = "<group>"; };
+		63442681170BF53300483FC4 /* Service.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Service.cpp; sourceTree = "<group>"; };
+		63442682170BF53300483FC4 /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
+		63442683170BF53300483FC4 /* StreamParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StreamParser.cpp; sourceTree = "<group>"; };
+		63442684170BF53300483FC4 /* StreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamParser.h; sourceTree = "<group>"; };
+		63442685170BF53300483FC4 /* TransportPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransportPacket.cpp; sourceTree = "<group>"; };
+		63442686170BF53300483FC4 /* TransportPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransportPacket.h; sourceTree = "<group>"; };
+		63442693170BFDCD00483FC4 /* TimeDateSection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TimeDateSection.cpp; sourceTree = "<group>"; };
+		63442694170BFDCD00483FC4 /* TimeDateSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeDateSection.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +95,33 @@
 		63442662170BF09C00483FC4 /* tsdump */ = {
 			isa = PBXGroup;
 			children = (
+				6344266C170BF53300483FC4 /* Application.cpp */,
+				6344266D170BF53300483FC4 /* Application.h */,
+				6344266E170BF53300483FC4 /* common.h */,
+				6344266F170BF53300483FC4 /* conversion.cpp */,
+				63442670170BF53300483FC4 /* conversion.h */,
+				63442674170BF53300483FC4 /* errorcodes.h */,
+				63442675170BF53300483FC4 /* Event.cpp */,
+				63442676170BF53300483FC4 /* Event.h */,
+				63442677170BF53300483FC4 /* EventInformationSection.cpp */,
+				63442678170BF53300483FC4 /* EventInformationSection.h */,
+				63442679170BF53300483FC4 /* EventStreamParser.cpp */,
+				6344267A170BF53300483FC4 /* EventStreamParser.h */,
+				6344267B170BF53300483FC4 /* Exception.h */,
+				6344267C170BF53300483FC4 /* FileReader.cpp */,
+				6344267D170BF53300483FC4 /* FileReader.h */,
+				6344267E170BF53300483FC4 /* IOBase.h */,
+				63442680170BF53300483FC4 /* Reader.h */,
+				63442681170BF53300483FC4 /* Service.cpp */,
+				63442682170BF53300483FC4 /* Service.h */,
+				63442683170BF53300483FC4 /* StreamParser.cpp */,
+				63442684170BF53300483FC4 /* StreamParser.h */,
+				63442685170BF53300483FC4 /* TransportPacket.cpp */,
+				63442686170BF53300483FC4 /* TransportPacket.h */,
 				63442663170BF09C00483FC4 /* main.cpp */,
 				63442665170BF09C00483FC4 /* tsdump.1 */,
+				63442693170BFDCD00483FC4 /* TimeDateSection.cpp */,
+				63442694170BFDCD00483FC4 /* TimeDateSection.h */,
 			);
 			path = tsdump;
 			sourceTree = "<group>";
@@ -118,6 +178,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				63442664170BF09C00483FC4 /* main.cpp in Sources */,
+				63442687170BF53300483FC4 /* Application.cpp in Sources */,
+				63442688170BF53300483FC4 /* conversion.cpp in Sources */,
+				6344268B170BF53300483FC4 /* Event.cpp in Sources */,
+				6344268C170BF53300483FC4 /* EventInformationSection.cpp in Sources */,
+				6344268D170BF53300483FC4 /* EventStreamParser.cpp in Sources */,
+				6344268E170BF53300483FC4 /* FileReader.cpp in Sources */,
+				63442690170BF53300483FC4 /* Service.cpp in Sources */,
+				63442691170BF53300483FC4 /* StreamParser.cpp in Sources */,
+				63442692170BF53300483FC4 /* TransportPacket.cpp in Sources */,
+				63442695170BFDCD00483FC4 /* TimeDateSection.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +215,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					"FILE_TEST=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

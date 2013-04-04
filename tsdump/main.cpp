@@ -6,13 +6,11 @@
 //  Copyright (c) 2013 ABC. All rights reserved.
 //
 
-#include <iostream>
+#include "common.h"
+#include "Application.h"
 
-int main(int argc, const char * argv[])
+int main(int argc, const char *argv[])
 {
-
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+    ABC::Application app;
+    return app.main(argc, argv);
 }
-
