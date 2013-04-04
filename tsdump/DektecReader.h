@@ -4,7 +4,7 @@
 #include "common.h"
 #include "Reader.h"
 #include "Exception.h"
-#include "DTAPI.h"
+#include <DTAPI.h>
 
 #define DEKTEC_BUFFER_SIZE 4096
 
